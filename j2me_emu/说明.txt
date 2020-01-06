@@ -1,0 +1,60 @@
+该module是以j2me_Loader修改过来的。
+
+引用时要求在GitHub中共享代码
+
+未进行资源内存的测试等。未知bug
+
+版本v1.0
+
+-----------------------------------------------------分割线--------------------------------------------------------------------------
+
+引入j2me_emu为j2me游戏的引擎。有自动拉伸的功能
+
+1.在项目下的build.gradle的repositories下添加
+        maven { url "https://jitpack.io" }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+
+1.将游戏代码源码拷贝到src/main/java下，在src/main下新建assets文件夹，将j2me游戏res下的资源文件拷贝到assets下
+
+2.修改游戏代码中获取资源文件中的代码为 InputStream is = MIDlet.getResourceAsStream(filePath);
+
+3.移除MIDlet继承类中的getAppProperty(String key)方法
+
+
+4.启动Activity继承MicroActivity
+
+5.在Activity的onCreate()方法中增加 Config.setOrigonWH(640,526);参数为原始宽高
+
+5.在AndroidManifest.xml中设置启动Activity，设置theme为 android:theme="@style/AppTheme.NoActionBar"，在主<intent-filter>后面设置
+	 <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:mimeType="application/java-archive" />
+                <data android:mimeType="text/vnd.sun.j2me.app-descriptor" />
+                <data android:host="*" />
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+            </intent-filter>
+
+ 例：<activity android:name=".MainActivity" android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:mimeType="application/java-archive" />
+                <data android:mimeType="text/vnd.sun.j2me.app-descriptor" />
+                <data android:host="*" />
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+            </intent-filter>
+        </activity>
+
+7.在j2me_emu下的scr/main/res/values/strings修改start_mid为启动的MIDlet，
+ 	例：<string name="start_mid">com.game.mouse.screen.MainMidlet</string>
+	

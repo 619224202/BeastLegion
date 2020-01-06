@@ -1,0 +1,102 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+    <style name="AppTheme" parent="@style/Theme.AppCompat">
+        <item name="colorPrimary">@color/dark_color_primary</item>
+        <item name="colorPrimaryDark">@color/dark_color_primary_dark</item>
+        <item name="colorAccent">@color/dark_color_accent</item>
+        <item name="android:colorBackground">@color/dark_color_background</item>
+        <item name="android:windowBackground">@color/dark_color_background</item>
+        <item name="buttonStyle">@style/ButtonStyle</item>
+
+    </style>
+
+    <style name="AppTheme.Light" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/light_color_primary</item>
+        <item name="colorPrimaryDark">@color/light_color_primary_dark</item>
+        <item name="colorAccent">@color/light_color_accent</item>
+        <item name="android:colorBackground">@color/light_color_background</item>
+        <item name="android:windowBackground">@color/light_color_background</item>
+        <item name="buttonStyle">@style/ButtonStyle.Light</item>
+
+        <!--custom theme attrs-->
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/dark_color_primary</item>
+        <item name="colorPrimaryDark">@color/dark_color_primary_dark</item>
+        <item name="actionOverflowMenuStyle">@style/AppTheme.OverflowMenu</item>
+    </style>
+
+    <style name="AppTheme.OverflowMenu" parent="@style/Widget.AppCompat.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+    </style>
+
+    <style name="AppTheme.Light.NoActionBar" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/light_color_primary</item>
+        <item name="colorPrimaryDark">@color/light_color_primary_dark</item>
+        <item name="actionOverflowMenuStyle">@style/AppTheme.Light.OverflowMenu</item>
+    </style>
+
+    <style name="AppTheme.Light.OverflowMenu" parent="@style/Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+    </style>
+
+
+
+    <style name="FilePickerAlertDialogTheme" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="colorAccent">@color/file_picker_accent</item>
+    </style>
+
+
+
+    <style name="FilePickerAlertDialogTheme.Light" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/file_picker_accent</item>
+    </style>
+
+    <style name="ConfigTitleTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <!--<item name="android:textColor">@color/textColorPrimary</item>-->
+    </style>
+
+    <style name="CheckBoxStyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingStart">4dp</item>
+        <!--<item name="android:textColor">?textColorSecondary</item>-->
+    </style>
+
+    <style name="EditTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minHeight">38dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">#b0b0b0</item>
+        <!--<item name="android:textColor">?attr/textColorPrimary</item>-->
+    </style>
+
+    <style name="ButtonStyle.Base" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:maxHeight">38dp</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:paddingRight">6dp</item>
+        <!--<item name="android:elevation" tools:ignore="NewApi">1dp</item>-->
+    </style>
+
+    <style name="ButtonStyle" parent="ButtonStyle.Base">
+        <!--<item name="android:background">@drawable/bg_button_dark</item>-->
+    </style>
+
+    <style name="ButtonStyle.Light" parent="ButtonStyle.Base">
+        <!--<item name="android:background">@drawable/bg_button_light</item>-->
+    </style>
+
+</resources>

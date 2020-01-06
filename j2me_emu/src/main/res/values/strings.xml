@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">j2me_emu</string>
+    <string name="start_mid">cn.com.shengwan.main.BeastLegionMidlet</string>
+</resources>
